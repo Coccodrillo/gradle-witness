@@ -26,7 +26,7 @@ class WitnessPlugin implements Plugin<Project> {
         project.afterEvaluate {
             project.dependencyVerification.verify.each {
                 assertion ->
-                    List  parts  = assertion.tokenize(":")
+                    List  parts  = assertion.split(":")
                     String group = parts.get(0)
                     String name  = parts.get(1)
                     String hash  = parts.get(2)
