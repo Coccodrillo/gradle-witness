@@ -42,7 +42,7 @@ class WitnessPlugin implements Plugin<Project> {
                     }
 
                     if (!hash.equals(calculateSha256(dependency.file))) {
-                        throw new InvalidUserDataException("Checksum failed for " + assertion)
+                        throw new InvalidUserDataException("Checksum failed for " + assertion + " the actual one is " + calculateSha256(dependency.file))
                     }
             }
         }
